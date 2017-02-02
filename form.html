@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Add Employee</title>
+    <meta charset="utf-8" />
+    <!--<link rel="stylesheet" href="styling.css" />-->
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--<link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="scripts/bootstrap/js/bootstrap.min.js"></script>-->
+    <style>
+       
+        .error{      
+            color:red;
+        }
+    </style>
+	
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="JavaScripts.js"></script>
+    <link rel="stylesheet" href="styling.css" />
+</head>
+
+ <div style="text-align:center;  color: navy; margin:3px ">
+        <table id="header" align="right">
+            <tr>
+
+                <td height="50" width="200" align="right" style="font-size:30px;">
+                    <em>  HR Services </em>
+                </td>
+                <td style="align-content:flex-start">
+                    <img src="images/ser4.jpg" height="60" width="70" />
+                </td>
+            </tr>
+        </table>
+    </div>
+	
+	<table style="font-size:medium; margin:10px 10px 20px 10px">
+        <tr>
+            <td style="padding-right:1em">
+                <a href="home.html">
+                    Home Page
+                </a>
+            </td>
+            <td>
+                <a href="List of Employees.html">
+                    List of Employees
+                </a>
+            </td>
+        </tr>
+    </table>
+
+	<div style="margin:40px">  </div>
+    <div class="bg-warning " style="margin:3px">
+        <!--style="text-align:center; color: navy; background-color: mintcream;">-->
+        <h1 style="text-align:center; margin-top:0px"> Add an employee</h1>
+    </div>
+	 <div id="add">
+            <form id="addingemployee" class="form-horizontal" style="color:navy">
+                <div class="form-group" style ="width:100%">
+				<div class="form-group">
+					<label for="EmpName" class="col-sm-2 control-label">Employee Name* : </label>
+						<div class="col-sm-6">
+							<input id="EmpName" class="form-control" type="text" autofocus autocomplete="on" maxlength="15" />
+							<!--<span id="SempName" class="error" style="display:none">Enter emp name</span>-->
+						</div>
+				</div>		
+				
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="date">Employee ID* : </label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="EmpId" />
+                        <!--<span id="SEmpId" class="error" style="display:none">Enter emp id</span>-->
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="dob">Date of Birth* : </label>
+                    <div class="col-sm-2">
+                        <input class="form-control" id="dob" type="date" />
+                        <!--<span id="SDob" class="error" style="display:none">Enter emp DOB</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="doj">Date of Joining* : </label>
+                    <div class="col-sm-2">
+                        <input class="form-control" type="date" id="doj" />
+                        <!--<span id="SDoj" class="error" style="display:none">Enter emp DOJ</span>-->
+                    </div>
+                </div>
+                <div id="Sradio" class="error"></div>
+
+                <div class="form-group" >
+                    <label class="col-sm-2 control-label" for="radio">Worked previously?*: </label>
+                    <div class="col-sm-1">
+                        <label class="radio-inline">
+                            <input id="Yes" type="radio" name="radio" onclick="clickrad()" />Yes
+                        </label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="radio-inline"> 
+                        <input id="No" type="radio" name="radio" onclick="clickrad()" />No
+                        </label>
+                    </div>
+                </div>
+
+                <div id="WorkPre" style="display:none">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="CompName">Company Name* : </label>
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" id="CompName" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="from">From* : </label>
+                        <div class="col-sm-2">
+                            <input class="form-control" id="from" type="date" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="to">To* : </label>
+                        <div class="col-sm-2">
+                            <input class="form-control" type="date" id="to" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="division">Division* : </label>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="divdrop">
+                            <option value="Select">Select</option>
+                            <option value="It">IT</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Mark">Merketing</option>
+                            <option value="Hr">HR</option>
+
+                        </select> <span id="Sdiv" class="error" style="display:none">Enter emp DIV</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="desg">Designation* : </label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" id="Desg" />
+                        <!--<span id="Sdesg" class="error" style="display:none">enter emp Designation</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="txttype">Project ID* : </label>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="dropPid">
+                            <option value="Select">Select</option>
+                            <option value="P1">ASY245</option>
+                            <option value="P2">ASY765</option>
+                            <option value="P3">ASY368</option>
+                            <option value="P4">ASY246</option>
+                            <option value="P5">ASY926</option>
+                        </select> <span id="SpId" class="error" style="display:none">Enter Project ID</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="Sal">Salary* : </label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="number" id="Sal" />
+                        <!--<span id="Ssal" class="error" style="display:none">Enter emp Salary</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="phno">Contact* : </label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="phno" type="tel" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" maxlength="12" /> 
+                        <!--<span id="Sphone" class="error" style="display:none">Enter Contact Number</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="email">Email*: </label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /> 
+                        <!--<span id="Semail" class="error" style="display:none">Enter Email</span>-->
+                    </div>
+                </div>
+
+                <div id="errorMsgs" style="margin-left:200px" class="error"> </div>
+
+                <div class="text-center">
+                    <input class="btn btn-default btn-lg" style="margin-right:20px" type="submit" value="Add Employee" onclick="return info()" />
+                    <!--<input class="button" style="margin-right:20px" type="submit" />-->
+                    <input type="reset" value="Reset" class="btn btn-default btn-lg">
+                </div>
+
+                    
+                </div>
+                
+            </form>
+
+        </div> 
